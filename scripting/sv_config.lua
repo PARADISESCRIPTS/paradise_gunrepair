@@ -1,0 +1,5 @@
+Paradise = {}
+
+Paradise.Webhooks = {
+    repair = ""
+}
