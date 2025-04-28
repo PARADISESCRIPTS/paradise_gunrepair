@@ -2,13 +2,13 @@ Config = {}
 
 Config.Debug = false
 
-Config.Target = 'qb' -- Options: 'qb' for qb-target or 'ox' for ox_target
+Config.Target = 'ox' -- Options: 'qb' for qb-target or 'ox' for ox_target
 
 Config.RepairLocation = vector3(823.19, -2997.61, 6.02)
 
 Config.RepairTimes = {
-    pistol = 60,
-    smg = 120,
+    pistol = 20,
+    smg = 20,
     rifle = 180,
 }
 
@@ -32,14 +32,6 @@ Config.RequiredItems = {
     smg = {
         {
             item = "cryptostick",
-            amount = 2
-        },
-        {
-            item = "smg_mag",
-            amount = 1
-        },
-        {
-            item = "smg_suppressor",
             amount = 1
         }
     },

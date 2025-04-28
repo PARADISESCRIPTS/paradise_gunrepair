@@ -16,5 +16,6 @@ client_scripts {
 }
 
 server_scripts {
+    'scripting/sv_config.lua',
     'scripting/server.lua'
 }

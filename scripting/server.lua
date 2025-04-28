@@ -133,9 +133,14 @@ RegisterNetEvent('paradise_gunrepair:server:pickupWeapon', function()
 
     if activeRepairs[src] then
         local weaponName = activeRepairs[src].weapon
-        local metadata = activeRepairs[src].metadata
+        local metadata = activeRepairs[src].metadata or {}
+        
         metadata.durability = 100
         metadata.quality = 100
+        metadata.serie = metadata.serie or metadata.serial or tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
+        metadata.serial = metadata.serie
+        metadata.ammo = metadata.ammo or 0
+        metadata.tint = metadata.tint or 0
         
         local charInfo = Player.PlayerData.charinfo
         local weaponLabel = QBCore.Shared.Weapons[weaponName] and QBCore.Shared.Weapons[weaponName].label or weaponName

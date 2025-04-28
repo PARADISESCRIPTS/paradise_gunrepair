@@ -214,7 +214,10 @@ function RepairWeapon(item)
 
             CreateThread(function()
                 while repairTimer > 0 and isRepairing do
-                    lib.showTextUI(string.format('Repairing weapon: %d seconds remaining', repairTimer))
+                    lib.showTextUI(string.format('Repairing weapon: %d seconds remaining', repairTimer), {
+                        position = "right-center",
+                        icon = 'wrench'
+                    })
                     Wait(1000)
                     repairTimer = repairTimer - 1
                 end
