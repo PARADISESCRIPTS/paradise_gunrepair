@@ -31,6 +31,28 @@ local function HandleRepair()
         })
         return
     end
+
+    if Config.JobCheck.enabled then
+        local PlayerData = QBCore.Functions.GetPlayerData()
+        local hasJob = false
+        
+        for _, job in ipairs(Config.JobCheck.jobs) do
+            if PlayerData.job.name == job then
+                hasJob = true
+                break
+            end
+        end
+
+        if not hasJob then
+            lib.notify({
+                title = 'Weapon Repair',
+                description = 'You are not authorized to use this service!',
+                type = 'error'
+            })
+            return
+        end
+    end
+
     OpenRepairMenu()
 end
 

@@ -6,6 +6,13 @@ Config.Target = 'ox' -- Options: 'qb' for qb-target or 'ox' for ox_target
 
 Config.RepairLocation = vector3(823.19, -2997.61, 6.02)
 
+Config.JobCheck = {
+    enabled = false,
+    jobs = {
+        'mechanic'
+    }
+}
+
 Config.RepairTimes = {
     pistol = 20,
     smg = 20,
